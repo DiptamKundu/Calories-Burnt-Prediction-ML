@@ -11,7 +11,7 @@ def cal_burnt_prediction(input_data):
     input_data_as_numpy_array = np.asarray(input_data, dtype=np.float32)  # Convert input to float32
     input_data_reshaped = input_data_as_numpy_array.reshape(1, -1)
     prediction = loaded_model.predict(input_data_reshaped)[0]
-    return f"You have burnt {prediction:.2f} cal energies"  # Format prediction to two decimal places
+    return f"You have burnt approximately {prediction:.2f} cal energies"  # Format prediction to two decimal places
 
 
 def main():
@@ -19,12 +19,12 @@ def main():
 
     # Collect input data from user
     Gender = st.text_input('Gender')
-    Age = st.text_input('Age')
-    Height = st.text_input('Height')
-    Weight = st.text_input('Weight')
-    Duration = st.text_input('Duration')
-    Heart_Rate = st.text_input('Heart_Rate')
-    Body_Temp = st.text_input('Body_Temp')
+    Age = st.text_input('Age (in year)')
+    Height = st.text_input('Height (in cm)')
+    Weight = st.text_input('Weight (in kg)')
+    Duration = st.text_input('Duration (in min)')
+    Heart_Rate = st.text_input('Heart_Rate (in bpm)')
+    Body_Temp = st.text_input('Body_Temp (in `C)')
 
     result = ""
 
